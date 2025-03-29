@@ -69,41 +69,6 @@ const removerFuncionario = (index) => {
     console.log(`Funcionario ${funcionarioRemovido.nome} foi removido com sucesso!`);
   };
 
-const editarAluno = (index) => {
-  const aluno = alunos[index];
-  document.getElementById('nome').value = aluno.nome;
-  document.getElementById('idade').value = aluno.idade;
-  document.querySelector(`input[name="curso"][value="${aluno.curso}"]`).checked = true;
-  document.getElementById('nota').value = aluno.nota;
-
-  const form = document.querySelector('form');
-  const botaoCadastrar = form.querySelector('input[type="submit"]');
-  botaoCadastrar.value = "Salvar";
-
-  // Substitui o comportamento padrão do botão "Cadastrar"
-  form.onsubmit = function (index) {
-    const aluno = alunos[index];
-    document.getElementById('nome').value = aluno.nome;
-    document.getElementById('idade').value = aluno.idade;
-    document.querySelector(`input[name="curso"][value="${aluno.curso}"]`).checked = true;
-    document.getElementById('nota').value = aluno.nota;
-
-
-    alunos[index] = new Aluno(nomeAtualizado, idadeAtualizada, cursoAtualizado, notaAtualizada);
-//Essa porra não exclui a desgraça da linha antiga pois estou usando index, e se eu excluir antes ele não vai alterar pq n vai mais existir essa porra
-    alert('Aluno foi editado com sucesso!');
-
-    // Restaura o botão "Cadastrar" e o comportamento padrão
-    botaoCadastrar.value = "Cadastrar";
-    form.onsubmit = null;
-
-    atualizarTabela();
-
-    // Limpa o formulário
-    form.reset();
-  };
-}
-
 const editarFuncionario = (index) => {
     const funcionario = funcionarios[index];
     document.getElementById('nome').value = funcionario.nome;

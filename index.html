@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefa2</title>
+</head>
+<body>
+    <h1>Saraiva Startup 🛸</h1>
+
+    <h2>Cadastro de Funcionário</h2>
+
+    <form action="" method="post">
+        <p>            
+            <label for="nome">Nome 👨‍💼👩‍💼</label> <br>
+            <input type="text" name="nome" id="nome" placeholder="Digite seu nome">
+        </p>
+        
+        <p>            
+            <label for="idade">Idade 👶</label> <br>
+            <input type="number" name="idade" id="idade" placeholder="Digite sua idade">
+        </p>
+        
+        <p>            
+            <label for="cargo">Cargo 🧑‍💻</label> <br>
+            <input type="text" name="cargo" id="cargo" placeholder="Digite seu cargo">
+        </p>
+
+        <p>            
+            <label for="salario">Salário 💶</label> <br>
+            <input type="number" name="salario" id="salario" placeholder="Digite seu salário">
+        </p>
+
+        <input type="submit" value="Cadastrar">
+        <input type="reset" value="Limpar">
+
+    </form>
+
+    <!--<hr>
+    
+    <p id="mensagem-aprovacao"></p>
+-->
+    <hr>
+
+    <h2>Funcionários Cadastrados</h2>
+
+    <table border=".15" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th spacecolor="gray" width="130">NOME</th>
+                <th spacecolor="gray" width="130">IDADE</th>
+                <th spacecolor="gray" width="130">CARGO</th>
+                <th spacecolor="gray" width="130">SALÁRIO</th>
+                <th spacecolor="gray" width="130">Remover</th>
+                <th spacecolor="gray" width="130">Editar</th>
+            </tr>
+        </thead>
+        <tbody id="table">
+            <tr>
+                <td>🧑</td>
+                <td>🧑‍🍼</td>
+                <td>🧑‍💻</td>
+                <td>📊</td>
+                <td>
+                    <button onclick="editarAluno(0)">Editar</button>
+                </td>
+                <td>
+                    <button onclick="excluirAluno(0)">Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>Relatório B.I 📊</h2>
+    <div>
+        <button id="aprovados">Alunos Aprovados</button>
+        <button id="media-notas">Média das Notas</button>
+        <button id="media-idades">Média das Idades</button>
+        <button id="alunos-ordem">Alunos em ordem alfabética</button>
+        <button id="quantidade-por-curso">Quantidade de Alunos por Curso</button>
+    </div>
+    <div id="relatorio-bi"></div>
+</body>
+<script src="script.js"></script>
+</html>

@@ -62,6 +62,14 @@ function atualizarTabela() {
     });
 }
 
+// Exemplo de substituição de uma função anônima tradicional por uma arrow function:
+// Tradicional:
+//row.querySelector('.editar').addEventListener('click', function() {
+    //editarFuncionario(index);
+//});
+// Arrow:
+//row.querySelector('.editar').addEventListener('click', () => editarFuncionario(index));
+
 const removerFuncionario = (index) => {
     const funcionarioRemovido = funcionarios[index];
     funcionarios.splice(index, 1); // Remove o funcionario do array

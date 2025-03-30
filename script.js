@@ -117,10 +117,22 @@ document.getElementById('maior-que-cinco').addEventListener('click', function ()
     const MaiorQueCinco = funcionarios.filter(funcionario => funcionario.salario >= 5000);
     const listaMaiorQueCinco = MaiorQueCinco.map(funcionario => funcionario.toString()).join('<br>');
     document.getElementById('relatorio-bi').innerHTML = `<h3>uncionários com salário maior que 5k:</h3><p>${listaMaiorQueCinco}</p>`;
-  });
+});
 
 //media das notas
 document.getElementById('media-salario').addEventListener('click', () => {
     const mediaSalario = funcionarios.reduce((soma, funcionario) => soma + parseFloat(funcionario.salario), 0) / funcionarios.length;
     document.getElementById('relatorio-bi').innerHTML = `<h3>Média Salarial:</h3><p>${mediaSalario.toFixed(2)}</p>`;
-  });
+});
+
+//Listar apenas os cargos únicos (sem repetição).
+document.getElementById('cargos-unicos').addEventListener('click', () => {
+    const cargosUnicos = [...new Set(funcionarios.map(funcionario => funcionario.cargo))];
+    document.getElementById('relatorio-bi').innerHTML = `<h3>Cargos Únicos:</h3><p>${cargosUnicos.join(', ')}</p>`;
+});
+
+//Criar uma lista de nomes em maiúsculo.
+document.getElementById('nomes-maiusculos').addEventListener('click', () => {
+    const nomesMaiusculo = funcionarios.map(funcionario => funcionario.nome.toUpperCase());
+    document.getElementById('relatorio-bi').innerHTML = `<h3>Nomes em Maiúsculo:</h3><p>${nomesMaiusculo.join(', ')}</p>`;
+});
